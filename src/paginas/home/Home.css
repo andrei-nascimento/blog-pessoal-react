@@ -1,0 +1,16 @@
+.titulo {
+    font-size: 2rem;
+    color: #8a2be2;
+    text-align: center;
+}
+
+.imgPrincipal {
+    width: 500px;
+    height: 500px;
+    display: flex; /*Com esses dois comandos já é possível centralizar a imagem*/
+    margin: 0 auto; 
+}
+
+p {
+    text-align: center;
+}
