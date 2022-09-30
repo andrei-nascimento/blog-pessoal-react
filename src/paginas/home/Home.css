@@ -1,9 +1,23 @@
-.titulo {
-    font-size: 2rem;
-    color: #8a2be2;
-    text-align: center;
+.caixa {
+    background-color:white;
 }
 
-p {
-    text-align: center;
+.titulo {
+    color:#8a2be2 !important;
+    font-weight:bold !important;
+}
+
+.titulo2 {
+    color:grey !important;
+    font-weight:bold !important;
+}
+
+.botao {
+    border-color:#8a2be2 !important;
+    background-color:#8a2be2 !important;
+    color:white !important;
+}
+
+.postagens {
+    background-color:#8a2be2;
 }
