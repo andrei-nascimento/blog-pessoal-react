@@ -7,7 +7,7 @@ function Login() {
   return (
     <Grid container direction='row' justifyContent='center' alignItems='center'>
       <Grid alignItems='center' xs={6}>
-        <Box paddingX={20}>
+        <Box paddingX={15}>
           <form>
             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos'>Entrar</Typography>
             <TextField id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
@@ -15,7 +15,7 @@ function Login() {
 
             <Box marginTop={2} textAlign='center'>
               <Link to='/home' className='text-decorator-none'>
-                <Button type='submit' variant='contained' color='primary'>
+                <Button type='submit' variant='contained' className='logar'>
                   Logar
                 </Button>
               </Link>

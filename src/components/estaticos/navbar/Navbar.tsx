@@ -7,14 +7,16 @@ function Navbar() {
     return(
         <>
             <AppBar position="static">
-                <Toolbar>
-                    <Box className='cursor'>
-                        <Typography variant="h5" color="inherit">
-                            Blog Pessoal
-                        </Typography>
+                <Toolbar className='toolbar'>
+                    <Box className='blogPessoal'>
+                        <Box className='cursor'>
+                            <Typography variant="h5" color="inherit">
+                                Blog Pessoal
+                            </Typography>
+                        </Box>
                     </Box>
 
-                    <Box display="flex" justifyContent="start">
+                    <Box className='menu'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Home
