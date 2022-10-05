@@ -45,14 +45,19 @@ function CadastroUsuario() {
     }
 
     async function confirmar(event: ChangeEvent<HTMLFormElement>) {
-        event.preventDefault()
-        if(confirmarSenha == user.senha) {
-            cadastroUsuario(`usuarios/cadastrar`, user, setUserResult)
-            alert('Usuário cadastrado com sucesso!')
+        event.preventDefault();
+        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+            try {
+                await cadastroUsuario(`usuarios/cadastrar`, user, setUserResult);
+                alert('Usuário criado com sucesso. Efetue seu login, por favor.');
+            } catch (error) {
+                alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+            }
         } else {
-            alert('Dados inconsistentes! Favor verificar as informações de cadastro.')
+            alert('Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.');
         }
     }
+    
     
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center' >
