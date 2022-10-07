@@ -1,7 +1,8 @@
-.titulo {
-    font-weight: bold;
+.titulo-sobre {
+    font-weight: bold !important;
+    color: grey !important;
 }
 
-.sobre {
-    color: white;
+.texto-sobre {
+    color: grey !important;
 }

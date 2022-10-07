@@ -20,7 +20,7 @@ function Footer() {
                             <a href="https://github.com/andrei-nascimento" target="_blank">
                                 <GitHubIcon className='github' />
                             </a>
-                            <a href="https://www.instagram.com/nubank/" target="_blank">
+                            <a href="https://www.instagram.com/andrei_thrash/" target="_blank">
                                 <InstagramIcon className='redes' />
                             </a>
                             <a href="https://www.linkedin.com/in/andrei-lima-nascimento/" target="_blank">

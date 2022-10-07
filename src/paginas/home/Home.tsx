@@ -1,7 +1,7 @@
 import React from 'react';
 import {Typography, Box, Grid, Button} from '@material-ui/core';
 import imgPrincipal from './img/principal.png';
-import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
 import './Home.css';
 
 function Home() { 
