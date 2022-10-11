@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
 import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
 import './ListaTema.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokenReducer';
+import { toast } from 'react-toastify';
 
 function ListaTema() {
     //trazer a função de navegação interna
@@ -13,13 +15,23 @@ function ListaTema() {
     // estado para gerenciar os temas que virão do backend
     const [temas, setTemas] = useState<Tema[]>([])
 
-    // trazer o token do navegador para dentro do blog
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     //verificar se a pessoa tem token, se não tiver, mandar pra login
     useEffect(() => {
         if(token === '') {
-            alert('Você não possui acesso, faça login para continuar')
+            toast.error('Você precisa estar logado', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
             navigate('/login')
         }
     }, [token])

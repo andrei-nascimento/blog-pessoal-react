@@ -4,17 +4,30 @@ import imgPrincipal from './img/principal.png';
 import TabPostagem from '../../components/postagens/tabPostagem/TabPostagem';
 import './Home.css';
 import ModalPostagem from '../../components/postagens/modalPostagem/modalPostagem';
-import { useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../store/tokens/tokenReducer';
+import { toast } from 'react-toastify';
 
 function Home() { 
 
   let navigate = useNavigate();
-  const [token, setToken] =  useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState['tokens']>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if(token === '') {
-      alert('Você precisa estar logado!')
+      toast.error('Você precisa estar logado', {
+        position: 'top-right',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined
+    });
       navigate('/login')
     }
   }, [token])
@@ -33,7 +46,9 @@ function Home() {
             <Box marginRight={1}>
               <ModalPostagem />
             </Box>
+            <Link to='/posts' className='text-decorator-none'>
             <Button variant='outlined' className='botao'>Ver Postagens</Button>
+            </Link>
           </Box>
         </Grid>
 

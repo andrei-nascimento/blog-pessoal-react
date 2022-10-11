@@ -6,6 +6,7 @@ import { Typography } from '@material-ui/core';
 import { Box, Button, Grid, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './CadastroUsuario.css';
+import { toast } from 'react-toastify';
 
 function CadastroUsuario() {
     
@@ -49,12 +50,39 @@ function CadastroUsuario() {
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
             try {
                 await cadastroUsuario(`usuarios/cadastrar`, user, setUserResult);
-                alert('Usuário criado com sucesso. Efetue seu login, por favor.');
+                toast.success('Usuário cadastrado com sucesso. Efetue o login para acessar', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined
+                });
             } catch (error) {
-                alert('Falha ao cadastrar o usuário. Por favor, confira os campos');
+                toast.error('Falha ao cadastrar o usuário. Por favor, confira os campos', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined
+                });
             }
         } else {
-            alert('Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos.');
+            toast.error('Senhas divergentes, ou menores que 8 caracteres. Por favor, verifique os campos', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
         }
     }
     
