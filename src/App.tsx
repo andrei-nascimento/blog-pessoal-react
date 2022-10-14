@@ -9,7 +9,7 @@ import ListaTema from './components/temas/listaTema/ListaTema';
 import ListaPostagem from './components/postagens/listaPostagem/ListaPostagem';
 import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
-import DeletarPost from './components/postagens/deletarPost/DeletarPost';
+import DeletarPost from './components/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import './App.css';
 import { Provider } from 'react-redux';
